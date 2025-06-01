@@ -1,8 +1,11 @@
 # Reflectie over het gebruik van AI bij het project "Kijkcijfers in Vlaanderen"
 
 **Naam:** Jens Demeyer  
+
 **Studentennummer:** 202398958
+
 **Vak:** Machine Learning  
+
 **Datum:** 31/05/25  
 
 ---
@@ -16,15 +19,21 @@ In dit document reflecteer ik op het gebruik van AI-tools (zoals Large Language 
 ## 2. Gebruikte AI-tools
 
 - **Tool:** DeepSeek Chat  
-- **Doel:** Beschrijf kort waarvoor je de AI-tool hebt gebruikt (bijv. code-generatie, probleemoplossing, documentatie).  
+- **Doel:** DeepSeek chat heb ik vooral gebruikt om echte vragen te stellen. Als ik bijvoorbeeld niet wist hoe ik aan een bepaalde vraag moest beginnen of als ik even raad nodig had over functionaliteiten van het project. 
 
 ---
 
-## 3. Chatlogs
+- **Tool:** Github Copilot  
+- **Doel:** Copilot stond aan binnen Visual Studio Code voor dit project. Hij heeft me geholpen bij het automatisch aanvullen van code en ook bij het snel oplossen van errors. Copilot heb ik veel gebruikt maar hier heb ik geen chatlogs of andere documentatie van.
 
-Hieronder vind je een overzicht van de belangrijkste interacties met de AI-tool, inclusief prompts en antwoorden.
+---
+
+## 3. Chatlogs Deepseek
+
+Hieronder vind je een overzicht van de belangrijkste interacties met Deepseek, inclusief prompts en antwoorden.
 
 ### Voorbeeld 1: Template voor reflectie.md en examenrichtlijnen
+
 **Prompt:**  
 "Ik ben student Toegepaste informatica en ik moet voor het vak Machine Learning een project maken die kijkcijfers van vlaamse televisieprogrammas kan voorspellen. Ik ga in de bijlage en in de promt al de gegeven info geven. Gebruik deze in deze chat want hierin ga ik je vragen om me te helpen bij dit project. (examenrichtlijnen toegevoegd) Geef mij hiervoor de template in markdown om alles in te zetten."
 
@@ -58,25 +67,33 @@ Hieronder vind je een overzicht van de belangrijkste interacties met de AI-tool,
 ## Voorbeeld 1: Data-exploratie  
 **Prompt:**  
 ```  
+
 [Geef hier de exacte prompt die je hebt gebruikt, bijvoorbeeld:  
 "Help me with Python code to explore the TV viewership dataset from the CIM API."]  
+
 ```  
 
 **Antwoord AI:**  
 ```  
+
 [Plak hier het antwoord van de AI, bijvoorbeeld de gegenereerde code of advies.]  
+
 ```  
 
 ### Voorbeeld 2: Modelselectie  
 **Prompt:**  
 ```  
+
 [Geef hier een andere prompt, bijvoorbeeld:  
 "Which regression model is best suited for predicting TV viewership based on features like time and channel?"]  
+
 ```  
 
 **Antwoord AI:**  
 ```  
+
 [Plak hier het antwoord van de AI.]  
+
 ```  
 
 *(Voeg zo nodig meer voorbeelden toe.)*  
@@ -105,7 +122,8 @@ Samenvattend heeft de AI-tool me geholpen bij [specificeer de belangrijkste voor
 - **Gebruikte bronnen:** [Lijst van aanvullende bronnen of tools die je hebt gebruikt.]  
 ```
 
-### Tips voor invullen:
+### Tips voor invullen
+
 1. **Chatlogs:**  
    - Selecteer de meest relevante interacties met de AI.  
    - Zorg ervoor dat je prompts en antwoorden duidelijk zijn.  
@@ -121,6 +139,7 @@ Samenvattend heeft de AI-tool me geholpen bij [specificeer de belangrijkste voor
 Dit template kun je direct gebruiken of aanpassen aan je eigen stijl. Succes met je project!
 
 ## Voorbeeld 2: Historische data scrapen met datumrange en CSV-export
+
 **Prompt:**  
 "Geef mij nu de code om de data te scrapen naar een csv. Ik heb het csv bestand nog niet en ik weet ook nog niet de startdatum dus zoek dit uit. Scrape eerst de data tussen 2015 en 17"
 
@@ -181,9 +200,9 @@ end_date = datetime(2017, 12, 31)  # Einddatum
 scrape_cim_data(start_date, end_date)
 ```
 
-### Belangrijke aanpassingen:
+### Belangrijke aanpassingen
 
-1. **Datumrange**: 
+1. **Datumrange**:
    - De functie accepteert nu een start- en einddatum
    - Loopt door elke dag in de periode (inclusief `timedelta` voor dagelijkse increment)
 
@@ -198,26 +217,33 @@ scrape_cim_data(start_date, end_date)
 4. **Data-verrijking**:
    - Voegt de datum expliciet toe aan elk programma-record
 
-### Opmerkingen:
+### Opmerkingen
+
 - De API lijkt soms lege resultaten te geven voor bepaalde data - dit wordt netjes afgehandeld
 - Je kunt de periode eenvoudig aanpassen door `start_date` en `end_date` te wijzigen
 - Voor grote periodes kun je `time.sleep()` verhogen naar bijv. 2 seconden
 
-### Voor je reflectie.md:
+### Voor je reflectie.md
+
 ```markdown
 ### Voorbeeld 2: Historische data scrapen
 **Prompt:**  
 ```
+
 "Geef mij nu de code om de data te scrapen naar een csv. Ik heb het csv bestand nog niet en ik weet ook nog niet de startdatum dus zoek dit uit. Scrape eerst de data tussen 2015 en 17"
+
 ```
 
 **Antwoord AI:**  
 ```
+
 [Verwijzing naar bovenstaande code. Ik heb een functie gemaakt die een datumrange verwerkt, met:
+
 1. Automatische datumiteratie
 2. CSV-export met datumveld
 3. Rate limiting met time.sleep()
 4. Uitgebreide logging]
+
 ```
 
 **Evaluatie:**  
@@ -227,6 +253,7 @@ scrape_cim_data(start_date, end_date)
 ```
 
 ## Voorbeeld 3: Specifieke velden uit JSON naar CSV extraheren
+
 **Prompt:**  
 "Hiervan wil ik per item de: dateDiff, ranking, description, channel, startTime, rLength, rateInK"
 
@@ -291,7 +318,7 @@ else:
     print("Geen data gevonden voor deze datum")
 ```
 
-### Belangrijke aanpassingen:
+### Belangrijke aanpassingen
 
 1. **Specifieke velden selectie**:
    - Alleen `dateDiff`, `ranking`, `description`, `channel`, `startTime`, `rLength`, en `rateInK` worden opgeslagen
@@ -307,7 +334,7 @@ else:
    - Proper geformatteerde CSV met headers
    - UTF-8 encoding voor speciale karakters
 
-### Voor historische data scraping (2015-2017):
+### Voor historische data scraping (2015-2017)
 
 ```python
 def scrape_historical_data(start_year, end_year, output_file='kijkcijfers_historisch.csv'):
@@ -337,21 +364,27 @@ def scrape_historical_data(start_year, end_year, output_file='kijkcijfers_histor
 scrape_historical_data(2015, 2017)
 ```
 
-### Reflectie-update:
+### Reflectie-update
+
 ```markdown
 ### Voorbeeld 3: Specifieke velden extractie
 **Prompt:**  
 ```
+
 "Hiervan wil ik per item de: dateDiff, ranking, description, channel, startTime, rLength, rateInK"
+
 ```
 
 **Antwoord AI:**  
 ```
+
 [Verwijzing naar bovenstaande code met:
+
 1. Gerichte veldselectie
 2. Datumformattering
 3. CSV-schrijfoptimalisatie
 4. Optionele historische scraper]
+
 ```
 
 **Evaluatie:**  
@@ -361,6 +394,7 @@ scrape_historical_data(2015, 2017)
 ```
 
 ## Voorbeeld 4: Historische data scraping met maandelijkse batching
+
 **Prompt:**  
 "Zorg er nu voor dat de data in kijkcijfers.csv wordt opgeslaan en dat het bij de csv wordt toegevoegd ipv elke keer dat ik de code run de csv opnieuw gemaakt wordt"
 
@@ -460,7 +494,7 @@ if __name__ == "__main__":
     scrape_with_progress(start, end)
 ```
 
-### Belangrijke aanpassingen:
+### Belangrijke aanpassingen
 
 1. **Append-modus**:
    - Gebruik `'a'` (append) in plaats van `'w'` (write) bij het openen van het CSV-bestand
@@ -478,13 +512,13 @@ if __name__ == "__main__":
    - Controleert of bestand bestaat voordat het probeert te lezen
    - UTF-8 encoding voor consistente verwerking
 
-### Gebruiksaanwijzing:
+### Gebruiksaanwijzing
 
 1. **Eerste run**: Maakt een nieuw `kijkcijfers.csv` aan met headers
 2. **Volgende runs**: Voegt alleen nieuwe data toe (geen duplicaten)
 3. **Periodieke scraping**: Je kunt nu meerdere keren runnen voor verschillende datumbereiken
 
-### Voorbeeld om in batches te werken:
+### Voorbeeld om in batches te werken
 
 ```python
 # Scrape per maand om overzicht te houden
@@ -497,21 +531,27 @@ for year in [2023, 2024]:
         time.sleep(10)  # Extra pauze tussen maanden
 ```
 
-### Reflectie-update:
+### Reflectie-update
+
 ```markdown
 ### Voorbeeld 6: CSV append functionaliteit
 **Prompt:**  
 ```
+
 "Zorg er nu voor dat de data in kijkcijfers.csv wordt opgeslaan en dat het bij de csv wordt toegevoegd ipv elke keer dat ik de code run de csv opnieuw gemaakt wordt"
+
 ```
 
 **Antwoord AI:**  
 ```
+
 [Verwijzing naar bovenstaande code met:
+
 1. Append-modus voor CSV
 2. Duplicatencontrole
 3. Geheugenefficiënte verwerking
 4. Batch-scraping voorbeeld]
+
 ```
 
 **Evaluatie:**  
@@ -521,6 +561,7 @@ for year in [2023, 2024]:
 ```
 
 ## Voorbeeld 5: Extra relevante features voor kijkcijfer voorspelling
+
 **Prompt:**  
 "Welke relevante feutures zou ik nog kunnen gebruiken om kijkcijfers te voorspellen"
 
@@ -528,6 +569,7 @@ for year in [2023, 2024]:
 Hier zijn de meest relevante extra features die je zou kunnen toevoegen voor betere kijkcijfervoorspellingen, onderverdeeld in categorieën:
 
 ### 1. Tijdgerelateerde Features
+
 - **Dag van de week** (weekend vs werkdag)
 - **Feestdag indicator** (binary: 1=feestdag, 0=niet)
 - **Seizoen** (winter, lente, zomer, herfst)
@@ -535,6 +577,7 @@ Hier zijn de meest relevante extra features die je zou kunnen toevoegen voor bet
 - **Schoolvakantie indicator** (regio Vlaanderen)
 
 ### 2. Programma-specifieke Features
+
 - **Programmagenre** (nieuws, drama, comedy, sport, etc.)
 - **Programmaduur** (in minuten)
 - **Is het een herhaling?** (binary)
@@ -542,6 +585,7 @@ Hier zijn de meest relevante extra features die je zou kunnen toevoegen voor bet
 - **Cast populariteit** (aantal social media volgers hoofdacteurs)
 
 ### 3. Externe Factoren
+
 - **Weersdata**:
   - Temperatuur
   - Neerslag
@@ -551,15 +595,18 @@ Hier zijn de meest relevante extra features die je zou kunnen toevoegen voor bet
 - **Sportevenementen** (voetbalwedstrijden, Olympische Spelen etc.)
 
 ### 4. Historische Kijkcijfers
+
 - **Gemiddelde kijkcijfers vorige afleveringen** (rolling average)
 - **Kijkcijfer trend** (stijgend/dalend over laatste 5 afleveringen)
 - **Seizoensgebonden populariteit** (bijv. sinterklaasprogramma's in december)
 
 ### 5. Technische Features
+
 - **Beschikbaarheid op streamingplatforms** (Is het programma ook online te zien?)
 - **Uitzendformaat** (HD, 4K, live vs opgenomen)
 
-### Implementatievoorbeeld:
+### Implementatievoorbeeld
+
 ```python
 from datetime import datetime
 
@@ -582,21 +629,24 @@ def add_features(row):
 enhanced_data = [add_features(row) for row in your_data]
 ```
 
-### Belangrijkste features voor starters:
+### Belangrijkste features voor starters
+
 1. **Prime time indicator** (avonduren)
 2. **Weekend vs werkdag**
 3. **Programmagenre**
 4. **Zendernaam** (VRT vs VTM vs andere)
 5. **Historisch gemiddelde** voor vergelijkbare programma's
 
-### Data-bronnen:
-- Feestdagen: https://www.feestdagen-belgie.be/
-- Weerdata: https://www.meteo.be/nl/weer/waarnemingen
-- Programmagids: https://www.tvgids.nl/ of officiële zendergidsen
+### Data-bronnen
+
+- Feestdagen: <https://www.feestdagen-belgie.be/>
+- Weerdata: <https://www.meteo.be/nl/weer/waarnemingen>
+- Programmagids: <https://www.tvgids.nl/> of officiële zendergidsen
 
 Hoe meer van deze features je kunt toevoegen (met gezond verstand), hoe accurater je voorspellingsmodel zal worden!
 
 ## Voorbeeld 6: Programma genre, feestdagen en schoolvakantie bepalen via API's
+
 **Prompt:**  
 "Hoe kan ik met code bepalen of welk genre een programma is? kan ik deze data online curlen? Hetwelfde voor feestdagen en Schoolvakantie indicators. Indien er hier api's voor bestaan geef ze me dan"
 
@@ -604,46 +654,60 @@ Hoe meer van deze features je kunt toevoegen (met gezond verstand), hoe accurate
 Hier is een overzicht van hoe je programmagenres, feestdagen en schoolvakanties kunt bepalen via API's of webscraping:
 
 ### 1. Programmageneres bepalen
+
 **API Opties:**
+
 - **TMDB API** (The Movie Database):  
   Biedt genres voor films en TV-programma's via `genre/movie/list` en `genre/tv/list` endpoints.  
-  Voorbeeld: `https://api.themoviedb.org/3/genre/tv/list?api_key=YOUR_KEY`   
+  Voorbeeld: `https://api.themoviedb.org/3/genre/tv/list?api_key=YOUR_KEY`
   *Voordelen:* Gestructureerde data, gratis tier beschikbaar  
   *Nadelen:* Beperkt tot films/series, geen Vlaamse specifieke data
 
 **Alternatief:**
+
 - Scrape genres van programmagidsen zoals:
   - VRT MAX of VTM GO websites
-  - IMDb via hun API of scraping tools 
+  - IMDb via hun API of scraping tools
 
 ### 2. Feestdagen API's
+
 **Voor België/Vlaanderen:**
+
 - **OpenHolidaysAPI**  
   Biedt feestdagen voor België (en 30+ andere landen):  
+
   ```bash
   curl -X GET 'https://openholidaysapi.org/PublicHolidays?countryIsoCode=BE&languageIsoCode=NL&validFrom=2025-01-01&validTo=2025-12-31' -H 'accept: text/json'
   ```  
-  Velden: `name`, `startDate`, `endDate`, `nationwide` 
+
+  Velden: `name`, `startDate`, `endDate`, `nationwide`
 
 **Alternatieven:**
+
 - Scrape officiële bronnen zoals:
-  - https://www.belgium.be/nl/over_belgie/land/feestdagen
+  - <https://www.belgium.be/nl/over_belgie/land/feestdagen>
   - Wikipedia-pagina's over Belgische feestdagen
 
 ### 3. Schoolvakantie Indicators
+
 **API Opties:**
+
 - **OpenHolidaysAPI** (zelfde als boven):  
+
   ```bash
   curl -X GET 'https://openholidaysapi.org/SchoolHolidays?countryIsoCode=BE&subdivisionCode=BE-VLG&languageIsoCode=NL&validFrom=2025-01-01&validTo=2025-12-31' -H 'accept: text/json'
   ```  
-  Filterbaar per regio (bv. Vlaanderen met `BE-VLG`) 
+
+  Filterbaar per regio (bv. Vlaanderen met `BE-VLG`)
 
 **Vlaamse bronnen:**
+
 - Officiële kalender:  
-  https://onderwijs.vlaanderen.be/nl/schoolvakanties
+  <https://onderwijs.vlaanderen.be/nl/schoolvakanties>
 - Scrape data van onderwijsportalen
 
 ### Implementatievoorbeeld (Python)
+
 ```python
 import requests
 from datetime import datetime
@@ -671,17 +735,20 @@ def is_schoolvakantie():
     return bool(requests.get(url).json())
 ```
 
-### Aanvullende tips:
+### Aanvullende tips
+
 1. **Caching**: Sla API-responses lokaal op om rate limits te vermijden
-2. **Fallback**: Voor programma's niet in TMDB, scrape EPG-data van zenders 
-3. **Dataverrijking**: Combineer met weersdata voor betere voorspellingen 
+2. **Fallback**: Voor programma's niet in TMDB, scrape EPG-data van zenders
+3. **Dataverrijking**: Combineer met weersdata voor betere voorspellingen
 
 Let op: Voor scraping altijd:
+
 - Check `robots.txt`
 - Gebruik delays tussen requests (bv. `time.sleep(1)`)
-- Respecteer copyright 
+- Respecteer copyright
 
 ## Voorbeeld 7: Feestdagen CSV opschonen naar enkel NL naam en datum
+
 **Prompt:**  
 "Ik heb de csv's zelf gedownload. Zorg ervoor dat de csv aangepast wordt door naar enkel Startdate, en naam maar pak hier enkel de NL vertaling uit, al de rest mag weg."
 **Antwoord AI:**  
@@ -713,7 +780,8 @@ def clean_holidays_file(input_file, output_file):
 clean_holidays_file('holidays.public.csv', 'holidays_clean.csv')
 ```
 
-### Wat deze code doet:
+### Wat deze code doet
+
 1. Leest het originele CSV-bestand in
 2. Filtert alleen de Nederlandse namen uit het 'Name' veld
 3. Bewaart alleen:
@@ -721,7 +789,8 @@ clean_holidays_file('holidays.public.csv', 'holidays_clean.csv')
    - `holiday_name`: Nederlandse naam van de feestdag
 4. Schrijft naar een nieuw CSV-bestand met puntkomma als delimiter
 
-### Voorbeeld output:
+### Voorbeeld output
+
 ```
 date;holiday_name
 2020-01-01;Nieuwjaarsdag
@@ -730,8 +799,10 @@ date;holiday_name
 ...
 ```
 
-### Extra opties:
+### Extra opties
+
 1. **Datumformattering** aanpassen:
+
 ```python
 # Als je de datum in ander formaat wilt
 date_obj = datetime.strptime(row['StartDate'], '%Y-%m-%d')
@@ -739,17 +810,20 @@ formatted_date = date_obj.strftime('%d/%m/%Y')  # DD/MM/YYYY
 ```
 
 2. **Alternatief voor naam extractie** (robuuster):
+
 ```python
 import re
 name_nl = re.search(r'NL ([^,]+)', row['Name']).group(1).strip()
 ```
 
 3. **Command line versie**:
+
 ```bash
 python -c "import csv,sys;[print(f\"{r['StartDate']};{r['Name'].split('NL ')[1].split(',')[0].strip()}\") for r in csv.DictReader(open(sys.argv[1]), delimiter=';')]" holidays.public.csv > holidays_clean.csv
 ```
 
 ## Voorbeeld 8: Schoolvakantie CSV opschonen naar enkel NL naam en datums
+
 **Prompt:**  
 "Doe nu hetzelfde voor deze csv. enkel startdate, enddate zijn nodig en de naam vd vakantie in het NL"
 
@@ -782,7 +856,8 @@ def clean_school_holidays(input_file, output_file):
 clean_school_holidays('holidays.school.vlaanderen.csv', 'school_holidays_clean.csv')
 ```
 
-### Wat deze code doet:
+### Wat deze code doet
+
 1. Leest het originele CSV-bestand in met schoolvakanties
 2. Filtert alleen de Nederlandse namen uit het 'Name' veld
 3. Bewaart alleen:
@@ -791,7 +866,8 @@ clean_school_holidays('holidays.school.vlaanderen.csv', 'school_holidays_clean.c
    - `holiday_name`: Nederlandse naam van de vakantie
 4. Schrijft naar een nieuw CSV-bestand met puntkomma als delimiter
 
-### Voorbeeld output:
+### Voorbeeld output
+
 ```
 start_date;end_date;holiday_name
 2019-12-23;2020-01-05;Kerstvakantie
@@ -800,9 +876,10 @@ start_date;end_date;holiday_name
 ...
 ```
 
-### Extra opties:
+### Extra opties
 
 1. **Datumformattering** aanpassen:
+
 ```python
 from datetime import datetime
 
@@ -812,17 +889,20 @@ end_date = datetime.strptime(row['EndDate'], '%Y-%m-%d').strftime('%d/%m/%Y')
 ```
 
 2. **Alternatieve naam extractie** (robuuster voor verschillende formaten):
+
 ```python
 import re
 name_nl = re.search(r'NL ([^,;]+)', row['Name']).group(1).strip()
 ```
 
 3. **Command line versie** (voor snelle verwerking):
+
 ```bash
 python -c "import csv,sys;[print(f\"{r['StartDate']};{r['EndDate']};{r['Name'].split('NL ')[1].split(',')[0].strip()}\") for r in csv.DictReader(open(sys.argv[1]), delimiter=';')]" holidays.school.vlaanderen.csv > school_holidays_clean.csv
 ```
 
 ## Voorbeeld 9: Dataframes combineren en is_holiday feature toevoegen
+
 **Prompt:**  
 "Ok ik heb nu deze feutures: dateDiff,ranking,description,channel,startTime,rLength,rateInK en dan uit de andere csv's: date;holiday_name en start_date;end_date;holiday_name. Ik ga later nog aan feature engineering doen maar eerst wil ik deze csv's in pandas krijgen. Geef mij de code om een df te maken met  dateDiff,ranking,description,channel,startTime,rLength,rateInK,is_holiday. is_holiday gaat dus de holiday csv's af en als de datediff op een holiday zit dan geeft hij dat aan"
 
@@ -884,7 +964,8 @@ print(df_main.head())
 print(f"\nAantal dagen met feestdagen: {df_main['is_holiday'].sum()}")
 ```
 
-### Wat deze code doet:
+### Wat deze code doet
+
 1. **Laadt alle CSV-bestanden** in aparte DataFrames
 2. **Converteert datums** naar datetime objecten voor correcte vergelijking
 3. **Maakt `is_holiday` feature**:
@@ -893,8 +974,10 @@ print(f"\nAantal dagen met feestdagen: {df_main['is_holiday'].sum()}")
 4. **Optioneel**: Voegt ook de naam van de feestdag/vakantie toe voor verificatie
 5. **Toont resultaat** met voorbeeldrijen en aantal feestdagen
 
-### Aanvullende optimalisaties:
+### Aanvullende optimalisaties
+
 1. **Voor grote datasets** kun je de `iterrows()` vervangen door vectorized operaties:
+
 ```python
 # Snellere implementatie voor grote datasets
 holiday_dates = set(df_holidays['date'])
@@ -909,6 +992,7 @@ df_main['is_holiday'] = df_main['dateDiff'].apply(check_holiday_fast)
 ```
 
 2. **Feature engineering suggesties** voor later:
+
 ```python
 # Voorbeeld: dag van de week toevoegen
 df_main['day_of_week'] = df_main['dateDiff'].dt.dayofweek  # 0=maandag, 6=zondag
@@ -918,11 +1002,13 @@ df_main['is_weekend'] = df_main['day_of_week'].apply(lambda x: 1 if x >= 5 else 
 ```
 
 3. **Opslaan van het resultaat**:
+
 ```python
 df_main.to_csv('kijkcijfers_met_features.csv', index=False, sep=';')
 ```
 
 ## Voorbeeld 10: Feature engineering voor tijd en dag
+
 **Prompt:**  
 "Het volgende dat ik wil doen is aan feature engineering doen. Ik wil dat volgende features er allemaal bijkomen: weekday: dag van de week, month: maandnummer, is_primetime: binaire feature (1 = tussen 18:30u-22u), is_weekend: binaire feature (1 = zaterdag/zondag, 0 = anders)"
 
@@ -962,7 +1048,7 @@ df_main['is_weekend'] = df_main['weekday'].apply(lambda x: 1 if x >= 5 else 0)
 print(df_main[['dateDiff', 'startTime', 'weekday', 'month', 'is_primetime', 'is_weekend']].head(10))
 ```
 
-### Toelichting bij de features:
+### Toelichting bij de features
 
 1. **weekday**:
    - Gebruikt Pandas `dayofweek` functie
@@ -981,9 +1067,10 @@ print(df_main[['dateDiff', 'startTime', 'weekday', 'month', 'is_primetime', 'is_
    - 1 voor zaterdag (5) en zondag (6)
    - 0 voor werkdagen
 
-### Extra optimalisaties:
+### Extra optimalisaties
 
 1. **Vectorized operations** voor betere performance:
+
 ```python
 # Snellere implementatie voor grote datasets
 df_main['is_primetime'] = ((df_main['startTime'] >= primetime_start) & 
@@ -991,6 +1078,7 @@ df_main['is_primetime'] = ((df_main['startTime'] >= primetime_start) &
 ```
 
 2. **Categorische features** voor machine learning:
+
 ```python
 # Voor sommige modellen kan dit beter werken
 df_main['weekday_name'] = df_main['dateDiff'].dt.day_name()
@@ -998,6 +1086,7 @@ df_main['month_name'] = df_main['dateDiff'].dt.month_name()
 ```
 
 3. **Seizoensfeature** toevoegen:
+
 ```python
 seasons = {
     1: 'Winter', 2: 'Winter', 3: 'Spring', 4: 'Spring', 5: 'Spring',
@@ -1008,17 +1097,20 @@ df_main['season'] = df_main['month'].map(seasons)
 ```
 
 4. **Programmaduur in minuten**:
+
 ```python
 # Converteer rLength (HH:MM:SS) naar minuten
 df_main['duration_min'] = pd.to_timedelta(df_main['rLength']).dt.total_seconds() / 60
 ```
 
-### Opslaan van het resultaat:
+### Opslaan van het resultaat
+
 ```python
 df_main.to_csv('./Data/CleanData/kijkcijfers_met_features.csv', index=False, sep=';')
 ```
 
 ## Voorbeeld 11: Features op basis van description (is_news, is_sports)
+
 **Prompt:**  
 "De laatste feature die ik er nog aan wil toevoegen zijn features gebasseerd op de description. Ik wil de kolommen is_news, is_sports deze basseren zich op woorden als journaal, nieuws of wielrennen, voetbal, golf, boxen"
 
@@ -1073,7 +1165,7 @@ print("\nVoorbeeld van geclassificeerde programma's:")
 print(df_main[['description', 'is_news', 'is_sports', 'program_type']].sample(10))
 ```
 
-### Belangrijke aanpassingen:
+### Belangrijke aanpassingen
 
 1. **Case-insensitive matching**:
    - Gebruik `re.IGNORECASE` zodat 'Journaal' en 'journaal' hetzelfde matchen
@@ -1087,7 +1179,7 @@ print(df_main[['description', 'is_news', 'is_sports', 'program_type']].sample(10
 4. **Verificatie kolom**:
    - De `program_type` kolom helpt bij het controleren van de classificatie
 
-### Voorbeeld van uitbreiding:
+### Voorbeeld van uitbreiding
 
 ```python
 # Uitbreiding van trefwoordenlijsten
@@ -1099,7 +1191,7 @@ news_pattern = re.compile('|'.join(news_keywords), flags=re.IGNORECASE)
 sports_pattern = re.compile('|'.join(sports_keywords), flags=re.IGNORECASE)
 ```
 
-### Optimalisatie voor grote datasets:
+### Optimalisatie voor grote datasets
 
 Voor betere performance met grote datasets:
 
@@ -1120,13 +1212,14 @@ df_main['is_sports'] = df_main['description'].str.contains(
 ).astype(int)
 ```
 
-### Opslaan van het resultaat:
+### Opslaan van het resultaat
 
 ```python
 df_main.to_csv('./Data/CleanData/kijkcijfers_met_features_v2.csv', index=False, sep=';')
 ```
 
 ## Voorbeeld 12: Outlier detectie en distributieanalyse kijkcijfers
+
 **Prompt:**  
 "Ik zie enkele fouten in de grafieken. Eerst en vooral klopt er iets niet aan de distributie van de kijkcijfers. De grafiek hangt sterk naar links. Ik denk dat er dus enkele outliers zijn, we gaan deze eruit halen"
 
@@ -1134,6 +1227,7 @@ df_main.to_csv('./Data/CleanData/kijkcijfers_met_features_v2.csv', index=False, 
 Hier is de verbeterde analyse met outlier-detectie en verwijdering voor de kijkcijfers (rateInK):
 
 ### 1. Outlier Detectie en Verwijdering
+
 ```python
 # Bereken de IQR voor rateInK
 Q1 = df_final['rateInK'].quantile(0.25)
@@ -1154,6 +1248,7 @@ print(f"Verwijderd: {len(df_final) - len(df_clean)} rijen ({((len(df_final)-len(
 ```
 
 ### 2. Verbeterde Visualisaties
+
 ```python
 plt.figure(figsize=(18, 12))
 
@@ -1214,6 +1309,7 @@ plt.show()
 ```
 
 ### 3. Aanvullende Analyse
+
 ```python
 # Tijdspatronen analyse zonder outliers
 plt.figure(figsize=(12, 6))
@@ -1229,7 +1325,8 @@ plt.legend(title='Weekend', labels=['Weekdag', 'Weekend'])
 plt.show()
 ```
 
-### Belangrijke Verbeteringen:
+### Belangrijke Verbeteringen
+
 1. **Outlier behandeling**:
    - Gebruik van IQR-methode voor objectieve outlier-detectie
    - Behoud van 93-97% van de data (typisch bij deze methode)
@@ -1245,7 +1342,8 @@ plt.show()
    - Scatterplots met transparantie voor betere densiteitsweergave
    - Vergelijkende plots voor/na cleaning
 
-### Interessante Bevindingen om te Checken:
+### Interessante Bevindingen om te Checken
+
 1. Is er nog steeds een scheve distributie na outlier-verwijdering?
 2. Welke zenders hebben de meeste outliers?
 3. Hoe verhouden verschillende programmatypes zich na cleaning?
@@ -1254,6 +1352,7 @@ plt.show()
 Wil je dat ik me focus op specifieke aspecten van deze schonere dataset, of aanvullende analyses uitvoer?
 
 ## Voorbeeld 13: Pipelines voor onehotencoding en standaardiseren
+
 **Prompt:**  
 "Maak een onehotencoder pipeline. Deze gaan we later gebruiken om de channel categorie te onehotencoden en maak ook een standaardiseer pipeline. Later gaan we die gebruiken om de numerieke waarden te standaardizeren."
 
@@ -1317,14 +1416,14 @@ full_pipeline = Pipeline(steps=[
 
 Laat me weten:
 
-* welke numerieke kolommen je wil standaardiseren,
-* of je nog andere categorische kolommen hebt om te encoden,
-* en welk model je eerst wil proberen (bv. `LinearRegression`, `RandomForestRegressor`, ...)
+- welke numerieke kolommen je wil standaardiseren,
+- of je nog andere categorische kolommen hebt om te encoden,
+- en welk model je eerst wil proberen (bv. `LinearRegression`, `RandomForestRegressor`, ...)
 
 Dan help ik je met een volledig trainingsscript.
 
-
 ## Voorbeeld 14: Starttime als feature verwerken (minutes since midnight, cyclisch)
+
 **Prompt:**  
 "Starttime_fixed is een object en als ik probeer te trainen dan lukt dit niet is er een goeie manier om starttime toch te gebruiken als een feature? Ik heb hour al maar is het nuttig om minutes hier ook aan toe te voegen als aparte feature of kan ik deze beter samenvoegen tot 1 feuture"
 
@@ -1332,6 +1431,7 @@ Dan help ik je met een volledig trainingsscript.
 Hier zijn drie goed werkende opties om `startTime_fixed` effectief te gebruiken als feature:
 
 ### 1. **Aanbevolen Optie: Sinus/Cosinus Transformatie voor Cyclische Tijd**
+
 ```python
 def encode_cyclical_time(df):
     # Converteer naar datetime en extraheer minuten sinds middernacht
@@ -1345,12 +1445,15 @@ def encode_cyclical_time(df):
 
 df = encode_cyclical_time(df)
 ```
+
 **Voordelen**:  
+
 - Behoudt de cyclische natuur van tijd (23:59 is dichtbij 00:00)
 - Werkt uitstekend voor ML-modellen
 - Eén feature-paar vervangt zowel `hour` als `minute`
 
 ### 2. **Tijdsblokken Creatie**
+
 ```python
 def create_time_blocks(df):
     time_bins = [0, 6, 9, 12, 15, 18, 21, 24]
@@ -1368,12 +1471,15 @@ def create_time_blocks(df):
 
 df = create_time_blocks(df)
 ```
+
 **Voordelen**:  
+
 - Menselijk interpreteerbaar
 - Vermindert dimensionaliteit
 - Goede baseline voor snelle experimenten
 
 ### 3. **Numerieke Minuten sinds Middernacht**
+
 ```python
 def minutes_since_midnight(df):
     df['total_minutes'] = pd.to_datetime(df['startTime_fixed']).dt.hour * 60 + pd.to_datetime(df['startTime_fixed']).dt.minute
@@ -1381,17 +1487,21 @@ def minutes_since_midnight(df):
 
 df = minutes_since_midnight(df)
 ```
+
 **Voordelen**:  
+
 - Eenvoudigste numerieke representatie
 - Bevat meer informatie dan alleen `hour`
 - Lineaire modellen kunnen hier goed mee werken
 
 ### Wat te doen met bestaande `hour` feature?
+
 - **Houden** als je kiest voor optie 2 of 3
 - **Verwijderen** als je kiest voor optie 1 (sinus/cosinus bevat al deze info)
 - **Minuten apart toevoegen** heeft weinig toegevoegde waarde boven de minuten-sinds-middernacht aanpak
 
-### Voorbeeld Pipeline Integratie:
+### Voorbeeld Pipeline Integratie
+
 ```python
 def preprocessing_time_features(df):
     # Behoud bestaande hour feature voor backwards compatibility
@@ -1415,6 +1525,7 @@ df = preprocessing_time_features(df)
 Kies optie 1 voor de beste modelprestaties, optie 2 voor interpretatie, of optie 3 voor eenvoud. De sinus/cosinus aanpak is bijzonder effectief gebleken voor tijdsfeatures in ML-modellen.
 
 ## Voorbeeld 15: Gridsearch opzetten voor regressiemodellen
+
 **Prompt:**  
 "Ik heb verschillende regressiemodellen getest op de trainingsdata en wil nu met gridsearch op zoek gaan naar de beste modellen. Ik ga hieronder de code geven van de modellen die potentie hebben. Jij moet dan een gridsearch opstellen."
 
@@ -1448,6 +1559,7 @@ def run_grid_search(pipeline, param_grid, X_train, y_train, X_test, y_test):
 ```
 
 ### 1. Polynomiale Regressie
+
 ```python
 poly_param_grid = {
     'polynomialfeatures__degree': [1, 2, 3],
@@ -1464,6 +1576,7 @@ best_poly = run_grid_search(poly_pipeline, poly_param_grid, X_train, y_train, X_
 ```
 
 ### 2. Decision Tree
+
 ```python
 tree_param_grid = {
     'decisiontreeregressor__max_depth': [None, 5, 10, 20],
@@ -1480,6 +1593,7 @@ best_tree = run_grid_search(tree_pipeline, tree_param_grid, X_train, y_train, X_
 ```
 
 ### 3. Random Forest
+
 ```python
 rf_param_grid = {
     'randomforestregressor__n_estimators': [50, 100, 200],
@@ -1497,6 +1611,7 @@ best_rf = run_grid_search(rf_pipeline, rf_param_grid, X_train, y_train, X_test, 
 ```
 
 ### 4. Gradient Boosting
+
 ```python
 gb_param_grid = {
     'gradientboostingregressor__n_estimators': [50, 100, 200],
@@ -1514,6 +1629,7 @@ best_gb = run_grid_search(gb_pipeline, gb_param_grid, X_train, y_train, X_test, 
 ```
 
 ### 5. XGBoost
+
 ```python
 xgb_param_grid = {
     'xgbregressor__n_estimators': [50, 100, 200],
@@ -1531,10 +1647,11 @@ xgb_pipeline = Pipeline([
 best_xgb = run_grid_search(xgb_pipeline, xgb_param_grid, X_train, y_train, X_test, y_test)
 ```
 
-### Aanvullende tips:
+### Aanvullende tips
 
 1. **Parallelisatie**: Alle grid searches gebruiken `n_jobs=-1` voor maximale parallelisatie
 2. **Scoring**: Focus op RMSE, maar je kunt ook andere metrics toevoegen:
+
    ```python
    scoring = {
        'RMSE': 'neg_root_mean_squared_error',
@@ -1542,19 +1659,23 @@ best_xgb = run_grid_search(xgb_pipeline, xgb_param_grid, X_train, y_train, X_tes
        'MAPE': 'neg_mean_absolute_percentage_error'
    }
    ```
+
 3. **Early Stopping**: Voor XGBoost en Gradient Boosting kun je early stopping toevoegen:
+
    ```python
    xgb_param_grid['xgbregressor__early_stopping_rounds'] = [10]
    xgb_param_grid['xgbregressor__eval_set'] = [[(X_test, y_test)]]
    ```
 
 4. **RandomizedSearchCV**: Voor grotere parameter spaces:
+
    ```python
    from sklearn.model_selection import RandomizedSearchCV
    from scipy.stats import randint, uniform
    ```
 
 5. **Model Evaluatie**: Bewaar de beste modellen en vergelijk ze:
+
 ```python
 best_models = {
     'Polynomial': best_poly,
@@ -1570,26 +1691,308 @@ for name, model in best_models.items():
     print(f"{name} - Test RMSE: {rmse:.2f}")
 ```
 
+## Voorbeeld 16: Visualisaties en Interpretatie
+
+**Prompt:**  
+"Nu staat in de opdracht dit nog:
+Visualiseer en interpreteer je resultaten.
+– Zit je voornamelijk met overschatting of onderschatting?
+– Maak een rangschikking van de factoren die het meeste bijdragen aan de kijkcijfers.
+– Verklaar eventueel waarom bepaalde modellen beter presteren dan andere indien mogelijk.
+
+Geef mij de code om het model te visualiseren en te interpreteren"
+
+**Antwoord AI:**  
+Hier is een uitgebreide uitwerking van de gevraagde visualisaties en interpretaties:
+
+```python
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+import pandas as pd
+from sklearn.inspection import permutation_importance
+
+# Kies je model (vervang 'XGBoost' door het model van je keuze uit best_models)
+geselecteerd_model = best_models['XGBoost']
+model_naam = 'XGBoost'  # Pas dit aan naar de naam van je gekozen model
+
+# 1. Voorspellingen maken
+y_pred = geselecteerd_model.predict(X_test)
+
+# 2. Performance metrics berekenen
+rmse = root_mean_squared_error(y_test, y_pred)
+r2 = r2_score(y_test, y_pred)
+mape = mean_absolute_percentage_error(y_test, y_pred)
+
+print(f"\nPerformance van {model_naam} model:")
+print(f"- RMSE: {rmse:.2f}")
+print(f"- R²: {r2:.2f}")
+print(f"- MAPE: {mape:.2%}")
+
+# 3. Visualisatie: Voorspelling vs Werkelijkheid
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, y_pred, alpha=0.3)
+plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'k--')
+plt.xlabel('Werkelijke Kijkcijfers')
+plt.ylabel('Voorspelde Kijkcijfers')
+plt.title(f'{model_naam}: Voorspelling vs Werkelijkheid')
+plt.grid(True)
+plt.show()
+
+# 4. Visualisatie: Voorspellingsfouten (residuals)
+residuals = y_pred - y_test
+
+plt.figure(figsize=(12, 6))
+plt.hist(residuals, bins=50, edgecolor='black')
+plt.axvline(x=0, color='r', linestyle='--')
+plt.title(f'Verdeling van Voorspellingsfouten ({model_naam})')
+plt.xlabel('Voorspellingsfout (Predicted - Actual)')
+plt.ylabel('Frequentie')
+plt.grid(True)
+plt.show()
+
+# 5. Overschatting vs Onderschatting analyse
+overschat = np.sum(residuals > 0) / len(residuals) * 100
+onderschat = np.sum(residuals < 0) / len(residuals) * 100
+gelijk = np.sum(residuals == 0) / len(residuals) * 100
+
+print(f"\nOverschatting vs Onderschatting analyse:")
+print(f"- Percentage overschatting: {overschat:.1f}%")
+print(f"- Percentage onderschatting: {onderschat:.1f}%")
+print(f"- Perfecte voorspellingen: {gelijk:.1f}%")
+
+# 6. Feature importance analyse
+try:
+    # Probeer eerst built-in feature importance
+    if hasattr(geselecteerd_model.steps[-1][1], 'feature_importances_'):
+        importances = geselecteerd_model.steps[-1][1].feature_importances_
+        feature_names = geselecteerd_model.named_steps['preprocessing'].get_feature_names_out()
+    else:
+        # Gebruik permutation importance als built-in niet beschikbaar is
+        result = permutation_importance(geselecteerd_model, X_test, y_test, n_repeats=10, random_state=42)
+        importances = result.importances_mean
+        feature_names = X_test.columns
+    
+    importance_df = pd.DataFrame({
+        'Feature': feature_names,
+        'Importance': importances
+    }).sort_values('Importance', ascending=False)
+    
+    plt.figure(figsize=(10, 6))
+    sns.barplot(data=importance_df.head(10), x='Importance', y='Feature')
+    plt.title(f'Top 10 Belangrijkste Features ({model_naam})')
+    plt.tight_layout()
+    plt.show()
+    
+    print("\nTop 5 belangrijkste features:")
+    print(importance_df.head(5).to_string(index=False))
+    
+except Exception as e:
+    print(f"\nKon feature importance niet extraheren: {str(e)}")
+
+# 7. Model interpretatie
+print(f"\nInterpretatie van het {model_naam} model:")
+print(f"1. Het model verklaart {r2:.0%} van de variantie in kijkcijfers (R²)")
+print(f"2. De gemiddelde fout is {rmse:,.0f} kijkers (RMSE) of {mape:.0%} van de werkelijke waarde (MAPE)")
+print(f"3. Het model heeft een tendens om kijkcijfers {'te overschatten' if overschat > onderschat else 'te onderschatten'}")
+print("4. De belangrijkste features zijn hierboven weergegeven")
+```
+
+### Hoe te gebruiken:
+1. Vervang `'XGBoost'` door de naam van het model dat je wilt analyseren (bijv. `'Random Forest'`)
+2. De code werkt voor elk model in je `best_models` dictionary
+3. Alle visualisaties en analyses worden automatisch gegenereerd
+
+### Wat de code bevat:
+- Prestatiemetrics (RMSE, R², MAPE)
+- Voorspelling vs werkelijkheid scatter plot
+- Verdeling van voorspellingsfouten
+- Overschatting/onderschatting analyse
+- Feature importance ranking
+- Duidelijke modelinterpretatie
+
+### Aanpassingen voor specifieke modellen:
+- Voor lineaire modellen (zoals Polynomial): gebruik `coef_` in plaats van `feature_importances_`
+- Voor Decision Trees: de feature importance is standaard beschikbaar
+- Voor ensemble methoden: zowel built-in importance als permutation importance wordt ondersteund
+
+## Voorbeeld 17: Visualisaties en Interpretatie
+
+**Prompt:**  
+(in bijlage de csv input_voor_examen.csv)
+"de file is een csv file dat ik moet gebruiken om voorspellingen te maken. Hieronder nog wat extra info over wat ik precies moet doen.
+
+Beste student,
+
+Zoals eerder aangegeven, zal je op het examen (gepland op 2, 3 en 4 juni) een bestand ontvangen volgens het formaat van het bestand in bijlage. 
+
+de datums in dit bestand (dat inhoudelijk individueel kan zijn) zullen niet meer dan enkele dagen in de toekomst liggen t.o.v. de examendatum
+je zorgt ervoor dat je een Python-applicatie (.py file) ter beschikking hebt die dit bestand kan inlezen en vervolgens predicties van de kijkcijfers kan doen, op basis van jouw opgeslagen model. Je kunt het bestand in bijlage dus gebruiken om je .py-script te testen, alleen zul je op het examen andere data krijgen. 
+het is dus niet de bedoeling dat je tijdens het examen opnieuw gaat trainen om deze predicties te berekenen. 
+er zullen in dit bestand geen tv-programma's in voorkomen die in het verleden nog nooit werden uitgezonden. 
+deze predicties zullen niet gebruikt worden om je model te evalueren, maar enkel om na te gaan of je een werkend, opgeslagen model hebt. 
+naast deze .py file dien je ook een .ipynb file in tegen zondagavond 1 juni om 22u00 op Chamilo (een opdracht zal nog aangemaakt worden), waarin je duidelijk aangeeft hoe je tot je optimale model gekomen bent."
+
+**Antwoord AI:**  
+Hier is een complete Python script (`predict_kijkcijfers.py`) dat het opgeslagen model laadt en voorspellingen maakt voor het gegeven CSV-bestand:
+
+```python
+import pandas as pd
+import numpy as np
+import re
+from datetime import datetime
+import pickle
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from sklearn.compose import ColumnTransformer
+import joblib
+
+def preprocess_input_data(input_df, holidays_path='./Data/CleanData/holidays_clean.csv', 
+                         school_holidays_path='./Data/CleanData/school_holidays_clean.csv'):
+    """
+    Preprocess the input data in the same way as the training data was processed
+    """
+    # Load holidays data
+    df_holidays = pd.read_csv(holidays_path, delimiter=';')
+    df_holidays['date'] = pd.to_datetime(df_holidays['date'])
+    
+    df_school_holidays = pd.read_csv(school_holidays_path, delimiter=';')
+    df_school_holidays['start_date'] = pd.to_datetime(df_school_holidays['start_date'])
+    df_school_holidays['end_date'] = pd.to_datetime(df_school_holidays['end_date'])
+
+    # Convert dates and times
+    input_df['Datum'] = pd.to_datetime(input_df['Datum'], dayfirst=True)
+    input_df['Start'] = pd.to_datetime(input_df['Start'], format='%H:%M:%S').dt.time
+    
+    # Convert duration to minutes
+    def convert_duration(dur_str):
+        h, m, s = map(int, dur_str.split(':'))
+        return h * 60 + m + s / 60
+    
+    input_df['duration_min'] = input_df['Duur'].apply(convert_duration)
+    
+    # Create features
+    input_df['weekday'] = input_df['Datum'].dt.dayofweek
+    input_df['month'] = input_df['Datum'].dt.month
+    input_df['hour'] = input_df['Start'].apply(lambda x: x.hour)
+    
+    # Minutes since midnight
+    input_df['minutes_since_midnight'] = input_df['Start'].apply(lambda x: x.hour * 60 + x.minute)
+    
+    # Check if holiday
+    def check_holiday(date):
+        if date in df_holidays['date'].values:
+            return 1
+        for _, row in df_school_holidays.iterrows():
+            if row['start_date'] <= date <= row['end_date']:
+                return 1
+        return 0
+    
+    input_df['is_holiday'] = input_df['Datum'].apply(check_holiday)
+    input_df['is_weekend'] = input_df['weekday'].apply(lambda x: 1 if x >= 5 else 0)
+    
+    # Prime time feature (18:30 - 22:00)
+    input_df['is_primetime'] = input_df['Start'].apply(
+        lambda x: 1 if (18, 30) <= (x.hour, x.minute) <= (22, 0) else 0
+    )
+    
+    # News program feature
+    news_keywords = ['journaal', 'nieuws', 'sportweekend']
+    news_pattern = re.compile('|'.join(news_keywords), flags=re.IGNORECASE)
+    input_df['is_news'] = input_df['Programma'].apply(lambda x: 1 if news_pattern.search(str(x)) else 0)
+    
+    # Select and rename columns to match training data
+    processed_df = input_df[['Zender', 'minutes_since_midnight', 'duration_min', 
+                            'weekday', 'month', 'hour', 'is_primetime', 
+                            'is_weekend', 'is_holiday', 'is_news']]
+    
+    processed_df = processed_df.rename(columns={'Zender': 'channel'})
+    
+    return processed_df
+
+def main():
+    # Load the trained model
+    try:
+        model = joblib.load('best_model.pkl')  # Change to your model filename
+    except FileNotFoundError:
+        print("Error: Model file 'best_model.pkl' not found. Please train the model first.")
+        return
+    
+    # Read input data
+    input_file = 'Input_voor_examen.csv'
+    try:
+        input_df = pd.read_csv(input_file, delimiter=';', encoding='utf-8-sig')
+    except FileNotFoundError:
+        print(f"Error: Input file '{input_file}' not found.")
+        return
+    
+    # Preprocess the input data
+    processed_data = preprocess_input_data(input_df)
+    
+    # Make predictions
+    predictions = model.predict(processed_data)
+    
+    # Add predictions to original dataframe
+    input_df['Voorspelde_Kijkcijfers'] = predictions.round().astype(int)
+    
+    # Save results
+    output_file = 'voorspellingen_kijkcijfers.csv'
+    input_df.to_csv(output_file, index=False, sep=';')
+    
+    print(f"Voorspellingen succesvol opgeslagen in {output_file}")
+    print("\nEerste 5 voorspellingen:")
+    print(input_df[['Programma', 'Zender', 'Datum', 'Start', 'Voorspelde_Kijkcijfers']].head())
+
+if __name__ == "__main__":
+    main()
+```
+
+### Instructies voor gebruik:
+
+1. **Bewaar dit script** als `predict_kijkcijfers.py`
+
+2. **Zorg dat je deze bestanden hebt**:
+   - Je getrainde model (standaard zoekt het naar `best_model.pkl` - pas dit aan als je model een andere naam heeft)
+   - De input CSV (`Input_voor_examen.csv`)
+   - De holidays data (`./Data/CleanData/holidays_clean.csv` en `school_holidays_clean.csv`)
+
+3. **Voer het script uit**:
+   ```bash
+   python predict_kijkcijfers.py
+   ```
+
+4. **Output**:
+   - Het script maakt een `voorspellingen_kijkcijfers.csv` bestand met de voorspelde kijkcijfers
+   - Het toont ook de eerste 5 voorspellingen in de console
+
+### Belangrijke aanpassingen die je mogelijk moet doen:
+
+1. **Model bestandsnaam**: Pas `best_model.pkl` aan naar de naam van je opgeslagen model
+2. **Model type**: Als je een ander model dan XGBoost gebruikt, zorg dan dat de preprocessing compatibel is
+3. **Pad naar holidays data**: Pas de paden aan als je bestanden ergens anders staan
+
+### Werking van het script:
+
+1. **Preprocessing**: Het transformeert de input data op dezelfde manier als je trainingsdata
+2. **Feature engineering**: Maakt alle features aan die je model verwacht
+3. **Voorspelling**: Laadt het opgeslagen model en maakt voorspellingen
+4. **Output**: Slaat de voorspellingen op in een nieuw CSV-bestand
+
+Zorg ervoor dat je dit script test met het voorbeeld CSV-bestand voordat je het examen aflegt!
+
+
 ## 4. Evaluatie van de AI-tool
 
 - **Nut:**  
-  Beschrijf hoe de AI-tool je heeft geholpen. Was het bijvoorbeeld nuttig voor snelle prototyping, het oplossen van specifieke problemen, of het verkrijgen van ideeën?  
+  Ik vond Deepseek een heel nuttige tool die me heel hard geholpen heeft bij het maken van deze opdracht. Zeker als je niet eht weet hoe te beginnen is het heel handig om te gebruiken aangezien het direct bruikbare code kan geven. 
 
 - **Valkuilen:**  
-  Beschrijf eventuele beperkingen of fouten in de AI-output. Heb je bijvoorbeeld incorrecte code of advies gekregen dat je moest aanpassen?  
-
-- **Kritische blik:**  
-  Hoe heb je ervoor gezorgd dat de AI-output correct en relevant was voor je project? Heb je de gegenereerde code getest of advies gecontroleerd met andere bronnen?  
+  Het grootste probleem dat AI-tools blijven hebben vind ik dat ze veel ongevraagde code bijvoegen. Ook al doen ze dit met een goede intentie vind ik het vervelend dat ze dit blijven doen. Verder geven ze ook niet altijd de meest geoptimaliseerde code. Ik heb een aantal keer zelf moeten aanpassingen maken aangezien ze dingen deden die overbodig waren.  
 
 ---
 
 ## 5. Conclusie
 
-Samenvattend heeft de AI-tool me geholpen bij [specificeer de belangrijkste voordelen]. Echter, het was essentieel om de output kritisch te evalueren en aan te passen waar nodig. Dit project heeft me geleerd hoe AI een waardevolle assistent kan zijn, mits het met de nodige zorg en inzicht wordt gebruikt.  
+Samenvattend waren zowel deepseek als Github Copilot een echte meerwaarde en hebben ze me goed geholpen. Echter, het was essentieel om de output kritisch te evalueren en aan te passen waar nodig. Dit project heeft me geleerd hoe AI een waardevolle assistent kan zijn, mits het met de nodige zorg en inzicht wordt gebruikt.  
 
 ---
-
-## Bijlagen
-
-- **Volledige chatlogs:** [Voeg eventueel een link of bijlage toe met de volledige chatgeschiedenis, indien nodig.]  
-- **Gebruikte bronnen:** [Lijst van aanvullende bronnen of tools die je hebt gebruikt.]  
